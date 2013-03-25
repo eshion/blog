@@ -14,7 +14,7 @@
 (import-list "user32" '(ShowWindow UpdateWindow))
 (import-list "user32" '(GetMessageA TranslateMessage DispatchMessageA))
 
-(import-list "htmlayout.dll" '(HTMLayoutLoadFile HTMLayoutLoadHtmlEx))
+(import-list "htmlayout.dll" '(HTMLayoutLoadFile HTMLayoutLoadHtml))
 (import-list "htmlayout.dll" '(HTMLayoutSetCallback HTMLayoutProcND))
 
 (FreeConsole)
@@ -52,9 +52,8 @@
         )
     )
     ;(HTMLayoutSetCallback hWnd hltproc 0)
-    (setq path "http://eshion.github.com/blog/other/ipad/")
-    (setq htmltext (read-file "http://eshion.github.com/blog/other/ipad/index.html"))
-    (HTMLayoutLoadHtmlEx hwnd htmltext (length htmltext) path)
+    (setq htmltext (read-file "F:/Downloads/HTMLayoutSDK/skin/res/index.htm"))
+    (HTMLayoutLoadHtml hwnd htmltext (length htmltext))
     hwnd
 )
 
