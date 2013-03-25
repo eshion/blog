@@ -52,7 +52,7 @@
         )
     )
     ;(HTMLayoutSetCallback hWnd hltproc 0)
-    (setq htmltext (read-file "F:/Downloads/HTMLayoutSDK/skin/res/default.htm"))
+    (setq htmltext (read-file "http://eshion.github.com/blog/other/ipad/index.html"))
     (HTMLayoutLoadHtml hwnd htmltext (length htmltext))
     hwnd
 )
