@@ -1,0 +1,198 @@
+html, body { 
+	background: none;
+}
+p{
+	margin: 0;
+	color: #FFFFFF;	
+}
+.main{
+	margin: 0;
+	text-align: center;
+	width: 499px;
+	height: 639px;
+	position: relative;
+	background: url(../image/background.png) no-repeat;	
+}
+
+.lock_screen,.home_screen{
+	width: 384px;
+	height: 512px;
+	top: 64px;
+	left: 58px;
+	position: absolute;
+}
+.lock_screen>div,.home_screen>div{
+	width: 384px;
+}
+.lock_screen{
+	background: url(../image/lock_cover.png) no-repeat;		
+}
+
+.lock_screen .top_bar{
+	height: 11px;
+	background: url(../image/lock_top_bar.png) no-repeat;		
+}
+
+.lock_screen .top{
+	height: 54px;
+	background: url(../image/lock_top.png) no-repeat;	
+}
+
+.lock_screen .top p{
+	font-size: 9px;
+}
+
+.lock_screen .top .time{
+	font-size: 30px;
+}
+
+.lock_screen .unlock_slider{
+	height: 64px;
+	top: 450px;
+	position:absolute;
+	background: url(../image/unlock_slider.png) no-repeat;	
+}
+.lock_arrow{
+	width: 33px;
+	height: 25px;
+	top: 20px;
+	position:absolute;
+	background: url(../image/lock_arrow.png) no-repeat;
+}
+
+.home_screen{
+	background: url(../image/home_cover.png) no-repeat;		
+}
+.home_screen .top_bar{
+	height: 11px;
+	background: url(../image/home_top_bar.png) no-repeat;		
+}
+
+.home_screen .top .time{
+	font-size: 4px;
+}
+
+.shelf{
+	bottom: 0px;
+	height: 62px;
+	padding: 0 30px;
+	position: absolute;
+	background: url(../image/shelf.png) no-repeat bottom left;	
+	accept-drop: selector( .shelf widget );
+	drop:insert;
+	flow: h-flow; 	
+}
+.shelf widget{
+	width: 38px;
+	height: 52px;
+	margin: 15px 33px 0;
+	draggable:only-move; 
+	cursor: pointer;
+}
+
+.shelf .app_1{
+	background: url(../image/shelf_app_1.png) no-repeat;		
+}
+.shelf .app_2{
+	background: url(../image/shelf_app_2.png) no-repeat;		
+}
+.shelf .app_3{
+	background: url(../image/shelf_app_3.png) no-repeat;		
+}
+.shelf .app_4{
+	background: url(../image/shelf_app_4.png) no-repeat;		
+}
+.shelf .app_notice{
+	width: 43px;
+	height: 57px;
+	margin-top: 10px;
+}
+.desktops{
+  accept-drop: selector( .desktops widget );
+  drop:insert;
+  padding:20px 20px;
+  flow: h-flow; 
+  height: 350px;
+  width: 100%%;
+}
+
+.desktops widget{
+	draggable:only-move; 
+	width: 58px;
+	height: 60px;
+	margin: 10px 20px 0; 
+	cursor: pointer;
+}
+.desktops .app_1{
+	background: url(../image/app_1.png) no-repeat;		
+}
+.desktops .app_2{
+	background: url(../image/app_2.png) no-repeat;		
+}
+.desktops .app_3{
+	background: url(../image/app_3.png) no-repeat;		
+}
+.desktops .app_4{
+	background: url(../image/app_4.png) no-repeat;		
+}
+.desktops .app_5{
+	background: url(../image/app_5.png) no-repeat;		
+}
+.desktops .app_6{
+	background: url(../image/app_6.png) no-repeat;		
+}
+.desktops .app_7{
+	background: url(../image/app_7.png) no-repeat;		
+}
+.desktops .app_8{
+	background: url(../image/app_8.png) no-repeat;		
+}
+.desktops .app_9{
+	background: url(../image/app_9.png) no-repeat;		
+}
+.page_control{
+	width: 28px;
+	height: 4px;
+	top: 420px;
+	left: 175px;
+	position: absolute;
+	background: url(../image/page_control.png) no-repeat;	
+}
+
+.home_btn{
+	height: 27px;
+	width: 27px;
+	position: absolute;
+	top: 595px;
+	left: 236px;
+}
+
+.dialog{
+	height: 71px;
+	width: 144px;
+	background: url(../image/dialog.png) no-repeat;
+	position: absolute;
+	top: 250px;
+	left: 180px;	
+}
+
+.dialog .btn_cancel{
+	height: 20px;
+	width: 62px;
+	position: absolute;
+	bottom: 10px;
+	left: 8px;	
+}
+
+.dialog .btn_ok{
+	height: 20px;
+	width: 62px;
+	position: absolute;
+	bottom: 10px;
+	left: 75px;	
+}
+
+.dialog .content{
+	margin: 12px 0;
+	font-size: 11px;
+}

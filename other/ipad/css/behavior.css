@@ -1,0 +1,29 @@
+.main{
+	behavior: windowCommand;
+}
+.lock_arrow{
+	behavior: moveable;
+}
+
+.home_btn{
+	behavior: clickable;
+	click! :
+		$1(.lock_screen)::display = "block",
+		$1(.home_screen)::display = "none"
+	;
+}
+
+.btn_cancel,.btn_ok{
+	behavior: clickable;
+	click! :
+		$1(.dialog)::display = "none"
+	;	
+}
+
+.desktops widget,.shelf widget{
+	behavior: clickable;
+	click! :
+		$1(.dialog .content):value = "你点击了"+self.name,
+		$1(.dialog)::display = "block"
+	;	
+}
