@@ -16,6 +16,7 @@
 
 (import-list "htmlayout.dll" '(HTMLayoutLoadFile HTMLayoutLoadHtml))
 (import-list "htmlayout.dll" '(HTMLayoutSetCallback HTMLayoutProcND))
+(import-list "htmlayout.dll" '(HTMLayoutGetRootElement HTMLayoutAttachEventHandler))
 
 (FreeConsole)
 
@@ -51,9 +52,14 @@
             0
         )
     )
-    ;(HTMLayoutSetCallback hWnd hltproc 0)
+    (HTMLayoutSetCallback hwnd hltproc 0)
     (setq htmltext (read-file "F:/Downloads/HTMLayoutSDK/skin/res/default.htm"))
     (HTMLayoutLoadHtml hwnd htmltext (length htmltext))
+    (setq phe (pack "ld" 0))
+    ;(HTMLayoutGetRootElement hwnd phe)
+    ;(println phe)
+    ;(HTMLayoutAttachEventHandler hwnd eventproc 0 0)
+    ;(HTMLayoutLoadFile hwnd "F:/Downloads/HTMLayoutSDK/skin/res/default.htm")
     hwnd
 )
 
@@ -103,9 +109,13 @@
 (define (htmlayout-callback-function umsg wparam lparam vparam)
     (println "htmlayout-callback-function") 0)
 
+(define (htmlayout-event-handle-function he target type reason)
+    (println "htmlayout-event-handle-function") 0)
+
 
 (setq wndproc (callback 0 'window-callback-function))
 (setq hltproc (callback 1 'htmlayout-callback-function))
+(setq eventproc (callback 1 'htmlayout-event-handle-function))
 
 (setq classname "newlisp class")
 
