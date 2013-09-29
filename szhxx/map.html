@@ -33,9 +33,6 @@ var init = function() {
         position: center,
         map: map
     });
-    soso.maps.event.addListener(marker,"click",function(){
-        alert("you clicked me")
-    });
     //setMap
     var mapM=document.getElementById("mapM");
     soso.maps.event.addDomListener(mapM,"click",function(){
@@ -44,50 +41,6 @@ var init = function() {
             marker.setMap(null);
         }else{
             marker.setMap(map);
-        }
-    });
-    //setClickable
-    var cable=document.getElementById("cable");
-    soso.maps.event.addDomListener(cable,"click",function(){
-        marker.setVisible(true);
-        if(marker.getClickable()){
-            marker.setClickable(false);
-        }else{
-            marker.setClickable(true);
-        }
-    });
-    //setDraggable
-    var drag=document.getElementById("drag");
-    soso.maps.event.addDomListener(drag,"click",function(){
-        marker.setVisible(true);
-        if(marker.getDraggable()){
-            marker.setDraggable(false);
-        }else{
-            marker.setDraggable(true);
-        }
-    });
-    //setVisible
-    var visibleF=document.getElementById("visibleF");
-    soso.maps.event.addDomListener(visibleF,"click",function(){
-        marker.setMap(map);
-        if(marker.getVisible()){
-            marker.setVisible(false);
-        }else{
-            marker.setVisible(true);
-        }
-    });
-    //setPosition
-    var flag=true;
-    var setP=document.getElementById("setP");
-    var latLng=new soso.maps.LatLng(39.908709,116.397519);
-    soso.maps.event.addDomListener(setP,"click",function(){
-        marker.setMap(map);
-        if(flag){
-            flag=false;
-            marker.setPosition(latLng);
-        }else{
-            flag=true;
-            marker.setPosition(center);
         }
     });
 }
