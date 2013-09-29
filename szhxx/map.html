@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>SOSOMap</title>
+<script charset="utf-8" src="http://map.soso.com/api/v2/main.js"></script>
+<style type="text/css">
+*{
+    margin:0px;
+    padding:0px;
+}
+body, button, input, select, textarea {
+    font: 12px/16px Verdana, Helvetica, Arial, sans-serif;
+}
+#info{
+    width:603px;
+    padding-top:3px;
+    overflow:hidden;
+}
+.btn{
+    width:112px;
+}
+</style>
+<script>
+
+var init = function() {
+    var center = new soso.maps.LatLng(39.916527,116.397128);
+    var map = new soso.maps.Map(document.getElementById('container'),{
+        center: center,
+        zoom: 13
+    });
+    var marker = new soso.maps.Marker({
+        position: center,
+        map: map
+    });
+    soso.maps.event.addListener(marker,"click",function(){
+        alert("you clicked me")
+    });
+    //setMap
+    var mapM=document.getElementById("mapM");
+    soso.maps.event.addDomListener(mapM,"click",function(){
+        marker.setVisible(true);
+        if(marker.getMap()){
+            marker.setMap(null);
+        }else{
+            marker.setMap(map);
+        }
+    });
+    //setClickable
+    var cable=document.getElementById("cable");
+    soso.maps.event.addDomListener(cable,"click",function(){
+        marker.setVisible(true);
+        if(marker.getClickable()){
+            marker.setClickable(false);
+        }else{
+            marker.setClickable(true);
+        }
+    });
+    //setDraggable
+    var drag=document.getElementById("drag");
+    soso.maps.event.addDomListener(drag,"click",function(){
+        marker.setVisible(true);
+        if(marker.getDraggable()){
+            marker.setDraggable(false);
+        }else{
+            marker.setDraggable(true);
+        }
+    });
+    //setVisible
+    var visibleF=document.getElementById("visibleF");
+    soso.maps.event.addDomListener(visibleF,"click",function(){
+        marker.setMap(map);
+        if(marker.getVisible()){
+            marker.setVisible(false);
+        }else{
+            marker.setVisible(true);
+        }
+    });
+    //setPosition
+    var flag=true;
+    var setP=document.getElementById("setP");
+    var latLng=new soso.maps.LatLng(39.908709,116.397519);
+    soso.maps.event.addDomListener(setP,"click",function(){
+        marker.setMap(map);
+        if(flag){
+            flag=false;
+            marker.setPosition(latLng);
+        }else{
+            flag=true;
+            marker.setPosition(center);
+        }
+    });
+}
+</script>
+</head>
+<body onload="init()">
+<div style="width:603px;height:300px" id="container"></div>
+<div id="info" style="margin-top:10px;">
+    <button id="mapM" class="btn">setMap</button>
+    <button id="cable" class="btn">setClickable</button>
+    <button id="drag" class="btn">setDraggable</button>
+    <button id="visibleF" class="btn">setVisible</button>
+    <button id="setP" class="btn">setPosition</button>
+</div>
+</body>
+</html>
